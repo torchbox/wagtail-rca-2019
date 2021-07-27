@@ -54,11 +54,15 @@ jobs:
             . venv/bin/activate
             black --check --diff ./rca --exclude migrations/
       - run:
+          name: Run isort
+          command: |
+            . venv/bin/activate
+            isort --recursive --check-only --diff ./rca
+      - run:
           name: Run Django tests
           command: |
             . venv/bin/activate
             pip install coverage
-            isort --recursive --check-only --diff ./rca
             ./manage.py collectstatic --clear --noinput
             ./manage.py makemigrations --check --noinput
             ./manage.py check
