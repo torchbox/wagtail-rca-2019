@@ -87,7 +87,7 @@ export const getProgrammes = ({ query, filters = {} }) => {
         const items = results.reduce((all, res) => all.concat(res.items), []);
         items.sort((a, b) => {
             const fa = a.title.toLowerCase();
-                const fb = b.title.toLowerCase();
+            const fb = b.title.toLowerCase();
             if (fa < fb) {
                 return -1;
             }
