@@ -60,7 +60,7 @@
 
     &--fixed {
         &,
-        .sticky-bar & {
+        .sticky-bar.headroom-pinned & {
             position: fixed;
         }
     }
