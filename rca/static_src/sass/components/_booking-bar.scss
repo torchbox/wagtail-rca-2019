@@ -48,13 +48,21 @@
         }
     }
 
-    .sticky-bar & {
+    .sticky-bar &,
+    &--fixed {
         @include z-index(sticky-nav-bar);
         position: sticky;
         top: calc(var(--vh, 1vh) * 100);
         left: 0;
         width: 100%;
         transform: translate3d(0, -100%, 0);
+    }
+
+    &--fixed {
+        &,
+        .sticky-bar & {
+            position: fixed;
+        }
     }
 
     // Place on last item on the page, to compensate for transform on actual item
